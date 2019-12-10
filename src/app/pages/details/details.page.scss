@@ -1,0 +1,22 @@
+ion-content{
+    --ion-background-color:#f3f3f3;
+}
+
+ion-toolbar {
+    text-align: center;
+}
+
+ion-title {
+    text-align: right;
+   
+}
+
+.poster img {
+    max-height: 40vh;
+    object-fit: contain;
+    margin: 5px auto;
+}
+
+ion-card-content p span {
+    font-weight: 800;
+}

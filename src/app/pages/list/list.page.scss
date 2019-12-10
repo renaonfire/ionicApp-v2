@@ -1,0 +1,26 @@
+ion-content{
+    --ion-background-color:#f3f3f3;
+}
+
+
+
+
+.poster img {
+  max-height: 30vh;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+ion-card-title {
+    font-size: 22px;
+}
+
+ion-card-content {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+ion-card-content p {
+    font-size: 18px;
+}
