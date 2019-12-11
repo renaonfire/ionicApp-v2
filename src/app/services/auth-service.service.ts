@@ -93,7 +93,14 @@ async showRegAlert() {
 
 
 isAuthenticated() {
-  return this.authState.value;
+
+  if(this.authState.value == false){
+    this.router.navigate(['sign-in']);
+    return this.authState.value;
+  } else{
+    return this.authState.value;
+  }
+
 }
 
 }
