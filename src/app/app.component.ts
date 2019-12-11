@@ -46,13 +46,6 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      this.authService.authState.subscribe(state => {
-        if(state){
-          this.router.navigate(['list']);
-        } else {
-          this.router.navigate(['sign-in']);
-        }
-      });
       
     });
   }
