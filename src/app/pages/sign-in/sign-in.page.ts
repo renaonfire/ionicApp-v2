@@ -24,30 +24,13 @@ export class SignInPage implements OnInit {
     
   }
 
-  async signIn(){
-    const { email, password } = this
-    try {
-      const res = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
-      this.authState.next(true);
-      this.router.navigate(['/list']);
-    } catch(err) {
-      console.dir(err);
-      if(err.code === 'auth/user-not-found' || err.code === 'auth/invalid-email') {
-        this.showAlert();
-
-      }
-    }
+ 
+  signIn(){
+    
+    this.authService.signIn(this.email, this.password);
   }
 
 
-  async showAlert() {
-    let alert = await this.alertCtrl.create({
-      header: 'Log In Failed',
-      message: 'Username or Password incorrect, please try again',
-      buttons: ['OK']
-    });
-    alert.present();
-}
 
  
 

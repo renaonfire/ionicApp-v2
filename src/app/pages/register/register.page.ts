@@ -24,34 +24,8 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
-
-  async register() {
-    const {email, password, cpassword} = this
-    if (password !== cpassword) {
-      return this.showRegAlert();
-    } 
-    try {
-      const res = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
-      this.router.navigate(['/list']);
-    }
-    catch(error) {
-      let alert = await this.alertCtrl.create({
-        header: error.code,
-        message: error.message,
-        buttons: ['OK']
-        
-      });
-      alert.present();
-  
-    }
+  register(){
+    this.authService.register(this.email, this.password, this.cpassword);
   }
   
-  async showRegAlert() {
-    let alert = await this.alertCtrl.create({
-      header: 'Password not matching',
-      message: 'The entered passwords did not match, please try again',
-      buttons: ['OK']
-    });
-    alert.present();
-  }
 }

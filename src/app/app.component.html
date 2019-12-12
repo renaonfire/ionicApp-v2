@@ -18,6 +18,12 @@
                 {{p.title}}
               </ion-label>
             </ion-item>
+            <ion-item lines="none" color="medium" [routerDirection]="'root'" [routerLink]="[sign-in]" (click)="logout()">
+                <ion-icon class="menu-icon" slot="start" name="log-out"></ion-icon>
+                <ion-label>
+                 Sign Out
+                </ion-label>
+              </ion-item>
           </ion-menu-toggle>
         </ion-list>
       </ion-content>

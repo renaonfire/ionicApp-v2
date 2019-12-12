@@ -13,7 +13,7 @@ export class AuthGuardService implements CanActivate{
   }
 
   canActivate(): boolean {
-   
+    
     return this.authService.isAuthenticated();
   }
 

@@ -18,12 +18,8 @@ export class AppComponent {
       title: 'Movies',
       url: '/list',
       icon: 'film'
-    },
-    {
-      title: 'Sign Out',
-      url: '/sign-in',
-      icon: 'log-out'
     }
+   
   ];
 
 
@@ -46,7 +42,20 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
+      this.authService.authState.subscribe(state => {
+        if (state){
+          console.log(state);
+          this.router.navigate(['list']);
+        } else {
+          this.router.navigate(['sign-in']);
+        }
+      });
+
       
     });
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }
