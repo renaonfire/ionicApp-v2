@@ -1,5 +1,4 @@
 
-
 <ion-content>
 
   <ion-grid>
@@ -39,7 +38,9 @@
  
  
      <ion-row class="buttons">
-         <ion-button color="dark" shape="round" (click)="register()">Register</ion-button>
+        <ion-button color="dark" fill="outline" shape="round" [routerLink]="['/sign-in']">Back</ion-button>
+        <ion-button color="dark" shape="round" (click)="register()">Register</ion-button>
+         
 
      </ion-row>
  
